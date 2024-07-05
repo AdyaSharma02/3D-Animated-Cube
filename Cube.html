@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+        h1 {
+            float: right;
+            font-family: cursive;
+            margin-right: 25%;
+            font-size: 50px;
+            color: white;
+        }
+        
+        .container {
+            position: relative;
+            perspective: 800px;
+            margin: 10% 0 0 40%;
+            width: 200px;
+            height: 200px;
+        }
+        
+        .square {
+            width: 100%;
+            height: 100%;
+            background: blue;
+            border: solid 2px #FFF;
+            position: absolute;
+            transform-style: preserve-3d;
+            animation-name: spin;
+            animation-duration: 7000ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        
+        .side {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: blue;
+            opacity: 0.8;
+        }
+        
+        .front {
+            transform: translateZ(100px);
+        }
+        
+        .back {
+            transform: translateZ(-100px) rotateY(180deg);
+        }
+        
+        .left {
+            transform: translateX(-100px) rotateY(-90deg);
+        }
+        
+        .right {
+            transform: translateX(100px) rotateY(90deg);
+        }
+        
+        .top {
+            transform: translateY(-100px) rotateX(90deg);
+        }
+        
+        .bottom {
+            transform: translateY(100px) rotateX(-90deg);
+        }
+        
+        @keyframes spin {
+            from {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            to {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+<b><h1>...CUBE...</h1></b>
+<body bgcolor="black">
+    <div class="container">
+        <div class="square">
+            <div class="side front"></div>
+            <div class="side back"></div>
+            <div class="side left"></div>
+            <div class="side right"></div>
+            <div class="side top"></div>
+            <div class="side bottom"></div>
+        </div>
+    </div>
+</body>
+</html>
